@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Loading from './components/Loading';
+import Weather from './components/Weather';
 import * as Location from 'expo-location';
 import { Alert } from 'react-native';
 import axios from 'axios';
@@ -8,11 +9,19 @@ const API_KEY = "fe72b1e43e617700ae6bc6d19556042e";
 
 export default function App() {
 
-
   const [isLoading, setIsLoading] = useState(true);
+  const [temp, setTemp] = useState(0);
+  const [condition, setCondition] = useState("Clouds");
+
   getWeather = async(lat, lon)=>{
-    const { data } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
-    console.log(data);
+    const { data:{
+      main: {temp},
+      weather
+    } } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+    setIsLoading(false);
+    setTemp(temp);
+    console.log(weather[0].main);
+    setCondition(weather[0].main);
   }
   getLocation = async()=>{
     try {
@@ -20,7 +29,6 @@ export default function App() {
       const { coords:{latitude,longitude} } = await Location.getCurrentPositionAsync({});
       console.log(latitude, longitude);
       getWeather(latitude, longitude);
-      setIsLoading(false);
     } catch (error) {
       console.log(error);
       Alert.alert("Can't find you.", "Set location permissions");
@@ -32,7 +40,7 @@ export default function App() {
   });
 
   return (
-    isLoading?<Loading />:null
+    isLoading?<Loading />:<Weather temp={Math.round(temp)} condition = { condition }/>
   );
 }
 
