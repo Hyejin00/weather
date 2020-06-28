@@ -8,67 +8,99 @@ import { LinearGradient } from 'expo-linear-gradient';
 const weatherOptions = {
   Thunderstorm: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Drizzle: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Rain: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Snow: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Clouds: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Clear: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Dust: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Fog: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Sand: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Dust: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Haze: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Squall: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Smoke: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Ash: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Tornado: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   },
   Mist: {
     iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"]
+    gradient: ["#a2ab58","#636363"],
+    title:"Thunderstorm",
+    subtitle:"It rains with thunder. refrain from going out."
   }
 }
 
@@ -83,9 +115,9 @@ export default function Weather({temp, condition}){
         <MaterialCommunityIcons name={weatherOptions[condition]?.iconName || "weather-cloudy"} size={100} color="white" />
         <Text style={styles.temp}>{ temp }º</Text>
       </View>
-      <View style={styles.halfContainer}>
-        <Text></Text>
-        <Text></Text>
+      <View style={{...styles.halfContainer,...styles.textContainer}}>
+        <Text style={styles.title}>{weatherOptions[condition]?.title}</Text>
+        <Text style={styles.subtitle}>{weatherOptions[condition]?.subtitle}</Text>
       </View>
     </LinearGradient>
   );
@@ -110,5 +142,19 @@ const styles = StyleSheet.create({
   temp:{
     fontSize: 38,
     color: 'white'
+  },
+  title:{
+    fontSize: 44,
+    color: 'white',
+    fontWeight: "100"
+  },
+  subtitle:{
+    fontSize:25,
+    color: 'white',
+    fontWeight: "bold"
+  },
+  textContainer: {
+    paddingHorizontal:20,
+    alignItems: "flex-start"
   }
 })
