@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View, } from 'react-native';
 
 export default function Loading(){
   return (
     <View style={styles.container}>
       <StatusBar />
+      <ActivityIndicator size="large" color="#0000ff" style={styles.indicator}/>
       <Text style={styles.text}>Getting The nice Weather</Text>
     </View>
 
@@ -25,5 +26,8 @@ const styles = StyleSheet.create({
     color:'#2c2c2c',
     fontSize: 30,
     fontWeight: "100"
+  },
+  indicator:{
+    paddingBottom: 150,
   }
 });

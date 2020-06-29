@@ -7,100 +7,94 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const weatherOptions = {
   Thunderstorm: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
+    iconName: "weather-lightning-rainy",
+    gradient: ["#0f0c29","#302b63","#24243e"],
     title:"Thunderstorm",
     subtitle:"It rains with thunder. refrain from going out."
   },
   Drizzle: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-rainy",
+    gradient: ["#00C9FF","#92FE9D"],
+    title:"Drizzle",
+    subtitle:"It's drizzling. Why don't you listen to music that will be sentimental?"
   },
   Rain: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-pouring",
+    gradient: ["#00B4DB","#0083B0"],
+    title:"Rain",
+    subtitle:"It's raining. Prepare an umbrella."
   },
   Snow: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-snowy-heavy",
+    gradient: ["#2193b0","#6dd5ed"],
+    title:"Snow",
+    subtitle:"It's snowing. Drive safe."
   },
   Clouds: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-cloudy",
+    gradient: ["#141E30","#243B55"],
+    title:"Clouds",
+    subtitle:"It's cloudy. Put on sunscreen before going out."
   },
   Clear: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-sunny",
+    gradient: ["#83a4d4","#b6fbff"],
+    title:"Clear",
+    subtitle:"It's clear. Have a nice day."
   },
   Dust: {
-    iconName: "weather-hail",
+    iconName: "weather-fog",
     gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    title:"Dust",
+    subtitle:"It's very dusty. Don't go out."
   },
   Fog: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-fog",
+    gradient: ["#BBD2C5","#536976","#292E49"],
+    title:"Fog",
+    subtitle:"It's foggy. Drive safe!"
   },
   Sand: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
-  },
-  Dust: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-fog",
+    gradient: ["#e9d362","#333333"],
+    title:"Sand",
+    subtitle:"It's yellow dust. Wear a mask and go out."
   },
   Haze: {
-    iconName: "weather-hail",
+    iconName: "weather-fog",
     gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    title:"Haze",
+    subtitle:"Fog and dust are together. Be careful of driving."
   },
   Squall: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-windy",
+    gradient: ["#2C3E50","#4CA1AF"],
+    title:"Squall",
+    subtitle:"There's a gust of wind. Put on layers of clothes."
   },
   Smoke: {
-    iconName: "weather-hail",
+    iconName: "weather-fog",
     gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    title:"Smoke",
+    subtitle:"There is a lot of dust in the air. Don't go out."
   },
   Ash: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-fog",
+    gradient: ["#bdc3c7","#2c3e50"],
+    title:"Ash",
+    subtitle:"There is a lot of dust in the air. Don't go out."
   },
   Tornado: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-tornado",
+    gradient: ["#0F2027","#203A43","#2C5364"],
+    title:"Tornado",
+    subtitle:"Strong gusts with thunderstorms. refrain from going out."
   },
   Mist: {
-    iconName: "weather-hail",
-    gradient: ["#a2ab58","#636363"],
-    title:"Thunderstorm",
-    subtitle:"It rains with thunder. refrain from going out."
+    iconName: "weather-fog",
+    gradient: ["#BBD2C5","#536976","#292E49"],
+    title:"Mist",
+    subtitle:"It's misty. I guess we don't have to spray mist today."
   }
 }
 
