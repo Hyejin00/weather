@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, RefreshControl } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -98,22 +98,39 @@ const weatherOptions = {
   }
 }
 
-export default function Weather({temp, condition}){
+export default function Weather({temp, condition, getLocation, local }){
+
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const onRefresh = async() =>{
+    setIsRefreshing(true);
+    await getLocation();
+    setIsRefreshing(false);
+  }
+
   return (
-    <LinearGradient
-      colors={weatherOptions[condition]?.gradient || ['#2193b0','#6dd5ed']}
-      style={styles.container}
+    <ScrollView
+      contentContainerStyle={styles.container}
+      refreshControl = {<RefreshControl refreshing={isRefreshing} onRefresh={ onRefresh }/>}
     >
-      <StatusBar style="light"/>
-      <View style={styles.halfContainer}>
-        <MaterialCommunityIcons name={weatherOptions[condition]?.iconName || "weather-cloudy"} size={100} color="white" />
-        <Text style={styles.temp}>{ temp }º</Text>
-      </View>
-      <View style={{...styles.halfContainer,...styles.textContainer}}>
-        <Text style={styles.title}>{weatherOptions[condition]?.title}</Text>
-        <Text style={styles.subtitle}>{weatherOptions[condition]?.subtitle}</Text>
-      </View>
-    </LinearGradient>
+      <LinearGradient
+        colors={weatherOptions[condition]?.gradient || ['#2193b0','#6dd5ed']}
+      >
+        <StatusBar style="light"/>
+        <View style={styles.halfContainer}>
+          <MaterialCommunityIcons name={weatherOptions[condition]?.iconName || "weather-cloudy"} size={100} color="white" />
+          <Text style={styles.temp}>{ temp }º</Text>
+          <View style={styles.rowContainer}>
+            <MaterialCommunityIcons name="crosshairs-gps" size={24} color="white" />
+            <Text style={styles.localText}>{local}</Text>
+          </View>
+        </View>
+        <View style={{...styles.halfContainer,...styles.textContainer}}>
+          <Text style={styles.title}>{weatherOptions[condition]?.title}</Text>
+          <Text style={styles.subtitle}>{weatherOptions[condition]?.subtitle}</Text>
+        </View>
+      </LinearGradient>
+    </ScrollView>
   );
 }
 
@@ -150,5 +167,13 @@ const styles = StyleSheet.create({
   textContainer: {
     paddingHorizontal:20,
     alignItems: "flex-start"
+  },
+  localText: {
+    color: 'white',
+    fontSize: 20,
+    marginLeft: 10
+  },
+  rowContainer: {
+    flexDirection:"row",
   }
 })

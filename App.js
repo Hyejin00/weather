@@ -12,16 +12,18 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [temp, setTemp] = useState(0);
   const [condition, setCondition] = useState("Clouds");
+  const [localName, setLocalName] = useState();
 
   getWeather = async(lat, lon)=>{
     const { data:{
       main: {temp},
-      weather
+      weather,
+      name
     } } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
     setIsLoading(false);
     setTemp(temp);
-    console.log(weather[0].main);
     setCondition(weather[0].main);
+    setLocalName(name);
   }
   getLocation = async()=>{
     try {
@@ -40,7 +42,7 @@ export default function App() {
   });
 
   return (
-    isLoading?<Loading />:<Weather temp={Math.round(temp)} condition = { condition }/>
+    isLoading?<Loading />:<Weather temp={Math.round(temp)} condition = { condition } getLocation = { getLocation } local = {localName}/>
   );
 }
 
