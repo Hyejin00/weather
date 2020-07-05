@@ -7,7 +7,7 @@ export default function Loading(){
     <View style={styles.container}>
       <StatusBar />
       <ActivityIndicator size="large" color="#0000ff" style={styles.indicator}/>
-      <Text style={styles.text}>Getting The nice Weather</Text>
+      <Text style={styles.text}>Getting weather...</Text>
     </View>
 
   );
@@ -16,7 +16,7 @@ export default function Loading(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF9C4',
+    backgroundColor: '#D6EAF8',
     alignItems: 'center',
     justifyContent: 'flex-end',
     paddingHorizontal:30,
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
     fontWeight: "100"
   },
   indicator:{
-    paddingBottom: 150,
+    paddingBottom: 190,
   }
 });

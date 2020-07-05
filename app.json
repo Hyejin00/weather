@@ -2,12 +2,12 @@
   "expo": {
     "name": "weather",
     "slug": "weather",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#D6EAF8"
     },
     "updates": {
@@ -17,11 +17,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription":  "We use our current location to get weather information, so we are essentially accessing your location. Please allow the app to access your location.",
+        "NSLocationAlwaysUsageDescription":  "We use our current location to get weather information, so we are essentially accessing your location. Please allow the app to access your location."
+      }
     },
-    "android":{
-      "package":"com.mju.hyejinlee",
-      "icon":"./assets/icon.png"
+    "android": {
+      "package": "com.mju.hyejinlee",
+      "icon": "./assets/icon.png",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/icon.png"

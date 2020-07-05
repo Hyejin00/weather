@@ -114,6 +114,7 @@ export default function Weather({temp, condition, getLocation, local }){
       refreshControl = {<RefreshControl refreshing={isRefreshing} onRefresh={ onRefresh }/>}
     >
       <LinearGradient
+        style={styles.container}
         colors={weatherOptions[condition]?.gradient || ['#2193b0','#6dd5ed']}
       >
         <StatusBar style="light"/>
