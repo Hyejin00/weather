@@ -19,8 +19,8 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription":  "We use our current location to get weather information, so we are essentially accessing your location. Please allow the app to access your location.",
-        "NSLocationAlwaysUsageDescription":  "We use our current location to get weather information, so we are essentially accessing your location. Please allow the app to access your location."
+        "NSLocationWhenInUseUsageDescription": "We use our current location to get weather information, so we are essentially accessing your location. Please allow the app to access your location.",
+        "NSLocationAlwaysUsageDescription": "We use our current location to get weather information, so we are essentially accessing your location. Please allow the app to access your location."
       }
     },
     "android": {
